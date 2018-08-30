@@ -55,8 +55,6 @@ pipeline {
             }
           }
           container('python') {
-            sh "pip install -r requirements.txt"  
-            sh "python -m pytest test_rsvpapp.py" 
  
             sh 'export VERSION=`cat VERSION` && skaffold build -f skaffold.yaml'
 
